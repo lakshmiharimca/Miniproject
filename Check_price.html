@@ -1,0 +1,21 @@
+<!-- ... Your HTML code ... -->
+
+<button type="button" class="btn btn-info" onclick="checkCylinderPrice()">Check Cylinder Price</button>
+<p id="cylinder_price_msg" class="text-info"></p>
+<script>
+function checkCylinderPrice() {
+    // Perform an AJAX request to get the cylinder price
+    $.ajax({
+        type: "GET",
+        url: "code/check_cylinder_price.php", // Replace with the actual URL to check cylinder price
+        success: function(response) {
+            $("#cylinder_price_msg").html("Current cylinder price: " + response);
+        },
+        error: function() {
+            $("#cylinder_price_msg").html("Unable to check cylinder price at the moment.");
+        }
+    });
+}
+</script>
+
+<!-- ... Your HTML code ... -->
